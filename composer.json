@@ -1,0 +1,16 @@
+{
+    "name": "kalstein/pdf-plugin",
+    "description": "An html to pdf plugin converter",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kalstein\\PdfPlugin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raul Gonzalez"
+        }
+    ],
+    "require": {}
+}
