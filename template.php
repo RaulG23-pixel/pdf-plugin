@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200;300;400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
     <title>template</title>
 </head>
 <style>
@@ -27,7 +26,7 @@
     }
 
     body {
-        font-family: 'Barlow';
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: white;
         width: 789px;
         margin: auto;
@@ -39,7 +38,7 @@
     }
 
     .title {
-        font-family: 'Krona', sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
 
@@ -125,14 +124,15 @@
     }
 
     .title-first {
-        font-size: 1rem;
+        font-size: 0.88rem;
         text-transform: uppercase;
         color: rgb(51, 51, 51);
     }
 
     .title-subtitle {
         text-transform: uppercase;
-        font-size: .82rem;
+        font-size: .60rem;
+        color:#323232;
     }
 
     .portada-flex-end {
@@ -228,7 +228,8 @@
 
     .page1-header {
         display: block;
-        margin-bottom: 70px;
+        margin-top: 40px;
+        margin-bottom: 80px;
     }
     .page1-header::after{
         content: "";
@@ -267,7 +268,7 @@
     }
     .item{
         display:block;
-        margin-top: 3.5rem;
+        margin-top: -8.3rem;
         align-items: center;
     }
     .item div {
@@ -307,7 +308,7 @@
         margin-bottom: 0;
     }
     .row-page-items .column-img{
-        width: 36.9%;
+        width: 36%;
         display: inline-block;
     }
     .row-page-items .column-text{
@@ -339,14 +340,17 @@
     .page2-header{
         display:block;
     }
+    .page2-header div{
+        display: inline-block;
+    }
     .page2-header__img-container {
-        width: 240px
+        width: 225px
     }
     .page2-header__img-container img{
         width: 100%;
     }
     .page2-header__column1{
-        width: 50%;
+        width: 36%;
         text-align: right;
     }
     .page2-header__column1 p{
@@ -362,7 +366,7 @@
     }
     .page2-header__text-container span{
         display:block;
-        font-size: 13px;
+        font-size: 11px;
     }
     .page2-authors{
         margin-top: 2rem;
@@ -384,7 +388,7 @@
     /*TABLE*/
     .page2-table{
         margin-top: 23px;
-        position: relative;
+        margin-bottom: 112px;
     }
     table{
         width: 100%;
@@ -438,32 +442,35 @@
         text-align: center;
     }
 
-    .page-results{
-        position: absolute;
-        bottom:-121px;
-        right: 0;
-        width: 170px;
-        text-align: right;
-        font-size: 11.5px;
+    
+    
+    /*LOGISTICA*/
+    .datos-logistica{
+        margin-top: 0px;
+        font-size: 10px;
+        position: relative;
     }
-    .page-results::after{
-        content: '';
-        clear:both;
-        display:table;
+    .datos-logistica div{
+        display: inline-block;
+    }
+    .datos-logistica .observaciones{
+        width:60%;
+    }
+    .datos-logistica .page-results{
+        width: 20%;
+        margin-left: 120px;
+        position:absolute;
     }
     .page-results > div {
         display:inline-block;
         width: 50%;
-        float:left;
+    }
+    .page-results .results-column-value{
+        width: 47%;
     }
     .results-column-title > *, .results-column-value > *{
         display:block;
         line-height: 20px;
-    }
-    /*LOGISTICA*/
-    .datos-logistica{
-        margin-top: 14px;
-        font-size: 10px;
     }
     
     .tiempos-entrega-value{
@@ -482,6 +489,9 @@
     .value-fields > * {
         display:block;
     }
+    .value-fields:last-child{
+        margin-bottom: -5px;
+    }
     .row-observaciones:nth-child(1) .tiempos-entrega-value{
         vertical-align: bottom;
     }
@@ -489,25 +499,27 @@
         margin-left: 68px;
     }
     .row-observaciones:nth-child(4) .value-fields{
-        margin-left: 119px;
+        margin-left: 128px;
     }
     .row-observaciones:nth-child(5) .value-fields{
-        margin-left: 124px;
+        margin-left: 132px;
     }
     .row-observaciones:nth-child(6) .value-fields{
-        margin-left: 121px;
+        margin-left: 130px;
     }
     .row-observaciones:nth-child(7) .value-fields{
-        margin-left: 100px;
+        margin-left: 105px;
     }
     .page2-footer-top::after{
         content: '';
         clear: both;
         display: table;
     }
+    
     .page2-footer-top > div{
         width: 50%;
         float: left;
+        display:inline-block;
     }
     .footer-top-icon{
         width: 40px;
@@ -519,20 +531,21 @@
         font-size: 10px;
         margin-top: 10px;
     }
+    .footer-top-content div{
+        display: inline-block;
+    }
     .footer-top-content .footer-top-icon{
         width: 15%;
-        float: left;
     }
     .footer-top-content .footer-top-text{
         width: 78%;
         margin-left: 10px;
         margin-top: 5px;
-        float: left;
     }
     .footer-bottom-content p {
         text-align: center;
         margin: 0 auto;
-        font-size: 9px;
+        font-size: 8px;
         margin-top: 12px;
         width: 160px;
     }
@@ -884,7 +897,7 @@
                             <td class="table-data-model">YR020FB</td>
                             <td class="table-data-image">
                                 <div class="table-img-container">
-                                    <img src="./assets/img/img-producto1.jpg" alt="imagen de producto1">
+                                    <img src="http://localhost/pdf-plugin/assets/img/img-producto1.jpg" alt="imagen de producto1">
                                 </div>
                             </td>
                             <td class="table-data-description">Marca: KalsteinLiofilizador piloto (sin función de sellado)</td>
@@ -898,7 +911,7 @@
                             <td class="table-data-model">YR020FB</td>
                             <td class="table-data-image">
                                 <div class="table-img-container">
-                                    <img src="./assets/img/img-producto2.jpg" alt="imagen de producto2">
+                                    <img src="http://localhost/pdf-plugin/assets/img/img-producto2.jpg" alt="imagen de producto2">
                                 </div>
                             </td>
                             <td class="table-data-description">Marca: KalsteinLiofilizador piloto (sin función de sellado)</td>
@@ -909,6 +922,58 @@
                         </tr>
                     </tbody>
                 </table>
+                
+            </div>
+            <div class="datos-logistica">
+                <div class="observaciones">
+                    <div class="row-observaciones">
+                    <span class="tiempos-entrega"><b>Observaciones<br>tiempos de entrega:</b></span>
+                    <span class="tiempos-entrega-value">45 dias aprox</span>
+                    </div>
+                    <div class="row-observaciones">
+                        <span class="tiempos-entrega"><b>Representante de Ventas</b></span>
+                        <div class="value-fields">
+                            <span>YULEANA Mia</span>
+                            <span>Email: mia@kalstein.eu</span>
+                            <span>Tlf: +33 1 78 95 87 89/ +33 6 80 76 07 10</span>
+                        </div>
+                    </div>
+                    <div class="row-observaciones">
+                        <span class="tiempos-entrega"><b>Terminos Comerciales:</b></span>
+                        <div class="value-fields">
+                            <span>Prepago con Orden de Compra.</span>
+                            <span>Descuento Especial (18%), aplicado.</span>
+                        </div>
+                    </div>
+                    <div class="row-observaciones">
+                        <span class="tiempos-entrega"><b>Incoterm:</b></span>
+                        <div class="value-fields">
+                            <span>EXW Kalstein Shanghai</span>
+                        </div>
+                    </div>
+                    <div class="row-observaciones">
+                        <span class="tiempos-entrega"><b>Moneda:</b></span>
+                        <div class="value-fields">
+                            <span>EUR</span>
+                        </div>
+                    </div>
+                    <div class="row-observaciones">
+                        <span class="tiempos-entrega"><b>Garantia:</b></span>
+                        <div class="value-fields">
+                            <span>1 año contra defectos de fabrica</span>
+                        </div>
+                    </div>
+                    <div class="row-observaciones">
+                        <span class="tiempos-entrega"><b>Metodos de Pago:</b></span>
+                        <div class="value-fields">
+                            <ul>
+                                <li>Transferencia Bancaria</li>
+                                <li>Trajeta de Credito/Debito (Pasarela de Pago)</li>
+                                <li>Paypal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="page-results">
                     <div class="results-column-title">
                         <span>Subtotal</span>
@@ -927,63 +992,13 @@
                         <span>44.995,04</span>
 
                     </div>
-                </div>
-            </div>
-            <div class="datos-logistica">
-                <div class="row-observaciones">
-                 <span class="tiempos-entrega"><b>Observaciones<br>tiempos de entrega:</b></span>
-                 <span class="tiempos-entrega-value">45 dias aprox</span>
-                </div>
-                <div class="row-observaciones">
-                    <span class="tiempos-entrega"><b>Representante de Ventas</b></span>
-                    <div class="value-fields">
-                        <span>YULEANA Mia</span>
-                        <span>Email: mia@kalstein.eu</span>
-                        <span>Tlf: +33 1 78 95 87 89/ +33 6 80 76 07 10</span>
-                    </div>
-                </div>
-                <div class="row-observaciones">
-                    <span class="tiempos-entrega"><b>Terminos Comerciales:</b></span>
-                    <div class="value-fields">
-                        <span>Prepago con Orden de Compra.</span>
-                        <span>Descuento Especial (18%), aplicado.</span>
-                    </div>
-                </div>
-                <div class="row-observaciones">
-                    <span class="tiempos-entrega"><b>Incoterm:</b></span>
-                    <div class="value-fields">
-                        <span>EXW Kalstein Shanghai</span>
-                    </div>
-                </div>
-                <div class="row-observaciones">
-                    <span class="tiempos-entrega"><b>Moneda:</b></span>
-                    <div class="value-fields">
-                        <span>EUR</span>
-                    </div>
-                </div>
-                <div class="row-observaciones">
-                    <span class="tiempos-entrega"><b>Garantia:</b></span>
-                    <div class="value-fields">
-                        <span>1 año contra defectos de fabrica</span>
-                    </div>
-                </div>
-                <div class="row-observaciones">
-                    <span class="tiempos-entrega"><b>Metodos de Pago:</b></span>
-                    <div class="value-fields">
-                        <ul>
-                            <li>Transferencia Bancaria</li>
-                            <li>Trajeta de Credito/Debito (Pasarela de Pago)</li>
-                            <li>Paypal</li>
-                        </ul>
-                    </div>
                 </div>    
-                
             </div>
-                <div class="page2-footer">
-                    <div class="page2-footer-top">
-                        <div class="footer-top-content">
+                <div class="page2-footer ">
+                    <div class="page2-footer-top clearfix">
+                        <div class="footer-top-content clearfix">
                             <div class="footer-top-icon">
-                                <img src="./assets/img/img-ce.jpg" alt="icono3">
+                                <img src="http://localhost/pdf-plugin/assets/img/img-ce.jpg" alt="icono3">
                             </div>
                             <div class="footer-top-text">
                                 <p><b>Marcado CE: para comprar con tranquilidad</b></p>
@@ -992,7 +1007,7 @@
                         </div>
                         <div class="footer-top-content">
                             <div class="footer-top-icon">
-                                <img src="./assets/img/icono3.png" alt="icono3">
+                                <img src="http://localhost/pdf-plugin/assets/img/icono3.png" alt="icono3">
                             </div>
                             <div class="footer-top-text">
                                 <p><b>Con la adquision de un equipo Kalstein</b></p>
