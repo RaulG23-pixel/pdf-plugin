@@ -1,32 +1,36 @@
 <?php 
-
+require __DIR__ ."/vendor/autoload.php";
 //Importacion de DOMPDF
-require __DIR__ "./vendor/autoload.php";
 
 use Dompdf\Dompdf;
-use Dompdf\Exception;
 use Dompdf\Options;
 
-//Lectura del archivo
-$filename = __DIR__ . "/template.php";
 
-$file = fopen($filename,'r');
-$text = fread($file, filesize($filename));
+//Lectura del archivo
+
+$file = fopen("template.php",'r');
+$text = fread($file,filesize("template.php"));
 fclose($file);
 
-/*$options = new Options();
-$options->set('isRemoteEnabled',true);      
-$dompdf = new Dompdf( $options );
+$options = new Options();
+$options->set('isRemoteEnabled',true);
+$dompdf = new DOMPDF($options);
+
+// (Optional) Setup the paper size and orientation
+$dompdf->setPaper('letter','portrait');
 
 $dompdf->loadHtml($text);
-$dompdf->setPaper("letter");
-
-
+// Render the HTML as PDF
 $dompdf->render();
-$dompdf->stream("document.pdf");*/
-echo $text;
 
-?>
+// Output the generated PDF to Browser
+//$dompdf->stream("document.pdf");
+$dompdf->stream("document.pdf");
+
+
+
+
+
 
 
 

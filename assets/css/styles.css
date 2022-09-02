@@ -1,13 +1,11 @@
-    @font-face {
-        font-family: "Barlow";
-        src: url(../fonts/BarlowSemiCondensed-Regular.ttf);
-    }
-    @font-face{
-        font-family: "Krona";
-        src: url("../fonts/KronaOne-Regular.ttf");
-    }    
-    
-    
+     @font-face {
+        font-family: 'Barlow';
+        src: url(/assets/fonts/BarlowSemiCondensed-Regular.ttf);
+     }
+     @font-face {
+        font-family: 'Krona';
+        src: url(/assets/fonts/KronaOne-Regular.ttf);
+     }   
     * {
         padding: 0;
         margin: 0;
@@ -298,7 +296,7 @@
         margin-bottom: 0;
     }
     .row-page-items .column-img{
-        width: 36.9%;
+        width: 36%;
         display: inline-block;
     }
     .row-page-items .column-text{
