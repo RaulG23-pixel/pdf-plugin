@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -867,52 +866,116 @@
                     <span>Juan Carlos</span>
                 </div>
             </div>
+            <?php
+ $data = [
+    0 => array(
+        "item" => 1,
+        "model" => "YR020FB",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 1,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00
+    ),
+    1 => array(
+        "item" => 2,
+        "model" => "ZR3002A",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 1,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00
+    ),
+    2 => array(
+        "item" => 3,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    3 => array(
+        "item" => 3,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    4 => array(
+        "item" => 4,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    5 => array(
+        "item" => 4,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    6 => array(
+        "item" => 4,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+
+
+ ];
+?>
             <div class="page2-table">
-                <table>
-                    <thead class="table-header">
-                        <tr>
-                            <th>Item</th>
-                            <th>Model</th>
-                            <th>Imagen</th>
-                            <th>Descripcion</th>
-                            <th>Cant</th>
-                            <th>Unid</th>
-                            <th>Valor Unitario</th>
-                            <th>Valor Total</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-body">
-                        <tr>
-                            <td class="table-data-item">1</td>
-                            <td class="table-data-model">YR020FB</td>
-                            <td class="table-data-image">
-                                <div class="table-img-container">
-                                    <img src="http://localhost/pdf-plugin/assets/img/img-producto1.jpg" alt="imagen de producto1">
-                                </div>
-                            </td>
-                            <td class="table-data-description">Marca: KalsteinLiofilizador piloto (sin función de sellado)</td>
-                            <td class="table-data-cant">1,00</td>
-                            <td class="table-data-un">UN</td>
-                            <td class="table-data-valor_un">25.692,00$</td>
-                            <td class="table-data-valor_total">25.692,002$</td>
-                        </tr>
-                        <tr>
-                            <td class="table-data-item">1</td>
-                            <td class="table-data-model">YR020FB</td>
-                            <td class="table-data-image">
-                                <div class="table-img-container">
-                                    <img src="http://localhost/pdf-plugin/assets/img/img-producto2.jpg" alt="imagen de producto2">
-                                </div>
-                            </td>
-                            <td class="table-data-description">Marca: KalsteinLiofilizador piloto (sin función de sellado)</td>
-                            <td class="table-data-cant">1,00</td>
-                            <td class="table-data-un">UN</td>
-                            <td class="table-data-valor_un">25.692,00$</td>
-                            <td class="table-data-valor_total">25.692,002$</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
+                <?php
+                    $chunk = array_chunk($data,5);
+                    $page_break = count($data) > 3 ? 'page_break' : '';
+                    $i = 0;
+                    while($i < count($chunk)){ ?>
+                        <table class=<?php echo $page_break;?>>
+                            <thead class="table-header">
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Model</th>
+                                    <th>Imagen</th>
+                                    <th>Descripcion</th>
+                                    <th>Cant</th>
+                                    <th>Unid</th>
+                                    <th>Valor Unitario</th>
+                                    <th>Valor Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <?php
+                                    $j = 0;
+                                    while($j < count($chunk[$i])){ ?>
+                                        <tr>
+                                            <td class="table-data-item"><?php echo $chunk[$i][$j]["item"]; ?></td>
+                                            <td class="table-data-model"><?php echo $chunk[$i][$j]["model"];?></td>
+                                            <td class="table-data-image">
+                                                <div class="table-img-container">
+                                                    <img src=<?php echo $chunk[$i][$j]["imagen"];?> alt="imagen de producto1">
+                                                </div>
+                                            </td>
+                                            <td class="table-data-description"><?php echo $chunk[$i][$j]["descripcion"];?></td>
+                                            <td class="table-data-cant"><?php echo $chunk[$i][$j]["cantidad"]?></td>
+                                            <td class="table-data-un"><?php echo $chunk[$i][$j]["unidad"]?></td>
+                                            <td class="table-data-valor_un"><?php echo $chunk[$i][$j]["valor_unitario"]?></td>
+                                            <td class="table-data-valor_total">25.692,002$</td>
+                                        </tr>
+                                <?php $j++; } ?>
+                            </tbody>
+                        </table>     
+                    <?php $i++; }?>
             </div>
             <div class="datos-logistica">
                 <div class="observaciones">

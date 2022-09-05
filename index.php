@@ -10,13 +10,33 @@
     a{
         text-decoration: none;
         color: #fff;
-        padding: 0.5rem;
+        padding: 1rem 3rem;
+        background: dodgerblue;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+    a:hover{
+        background: darkblue;
     }
 </style>
+<?php
+require __DIR__ . "/helpers/create_filenames.php";
+?>
 <body>
     <h1>Descargar archivo</h1>
-    <a href="view.php">Ver archivo</a>
-    <a href="post.php">Descargar archivo</a>
+    <?php
+    if(isset($_GET["file"])){
+        $filename = $_GET["file"];
+        $path = "uploads". "/" . $filename; ?>
+        <a href=<?php echo $path;?> target="_blank">Ver archivo</a>
+        <a href=<?php echo $path;?> download>Descargar archivo</a>
+    <?php
+    }else{ 
+        echo '<a href="createPdf.php">Crear archivo</a>';
+    } 
+    ?>
     
 </body>
 </html>

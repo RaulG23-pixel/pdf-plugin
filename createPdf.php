@@ -1,5 +1,6 @@
 <?php 
 require __DIR__ ."/vendor/autoload.php";
+require __DIR__. "/helpers/create_filenames.php";
 //Importacion de DOMPDF
 
 use Dompdf\Dompdf;
@@ -8,7 +9,7 @@ use Dompdf\Options;
 
 //Lectura del archivo
 
-$file = fopen("template.php",'r');
+$file = fopen("template_uso.php",'r');
 $text = fread($file,filesize("template.php"));
 fclose($file);
 
@@ -25,7 +26,13 @@ $dompdf->render();
 
 // Output the generated PDF to Browser
 //$dompdf->stream("document.pdf");
-echo $dompdf->output();
+$filename = createFilenames(".pdf");
+$path = __DIR__ . "/uploads/$filename";
+$output = $dompdf->output();
+file_put_contents($path,$output);
+if(file_exists($path)){
+    header("location:" . "index.php?success=1&file=$filename");
+}
 
 
 
