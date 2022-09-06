@@ -296,7 +296,7 @@
     }
     .item-description p{
         font-size: .7034rem;
-        line-height: 12px;
+        line-height: 14px;
         color: rgb(0, 0, 0);
         font-weight:400;
         width:89%;
@@ -346,7 +346,7 @@
         display: inline-block;
     }
     .page2-header__img-container {
-        width: 225px
+        width: 210px
     }
     .page2-header__img-container img{
         width: 100%;
@@ -371,7 +371,8 @@
         font-size: 11px;
     }
     .page2-authors{
-        margin-top: 2rem;
+        margin-top: 0.7rem;
+        margin-bottom: 0.5rem;
     }
     .page2-authors::after{
         content: "";
@@ -385,7 +386,7 @@
     }
     .page2-authors div span{
         display:block;
-        font-size: 12px;
+        font-size: 11px;
     }
     /*TABLE*/
     .page2-table{
@@ -397,6 +398,7 @@
     }
     table{
         width: 100%;
+        margin-bottom: 30px;
     }
     .table-header{
         background-color: rgb(8, 49, 126);
@@ -417,9 +419,11 @@
         padding-top: .6rem;
     }
     .table-img-container{
-        max-width: 49px;
+        max-width: 41px;
         margin: 0 auto;
-        
+    }
+    .table-img-container.end{
+        max-width: 27px;
     }
     .table-img-container img{
         width:100%;
@@ -453,13 +457,22 @@
     .datos-logistica{
         margin-top: 0px;
         font-size: 10px;
-        position: relative;
+        position: absolute;
+        bottom: 34rem;
     }
     .datos-logistica div{
         display: inline-block;
+        height: 39px;
     }
     .datos-logistica .observaciones{
         width:60%;
+        font-size: 9px;
+    }
+    .row-observaciones.observaciones_first{
+        height: 32px;
+    }
+    .row-observaciones.garantia{
+        height: 23px;
     }
     .datos-logistica .page-results{
         width: 20%;
@@ -469,13 +482,14 @@
     .page-results > div {
         display:inline-block;
         width: 50%;
+        height: auto;
     }
     .page-results .results-column-value{
         width: 47%;
     }
     .results-column-title > *, .results-column-value > *{
         display:block;
-        line-height: 20px;
+        line-height: 21px;
     }
     
     .tiempos-entrega-value{
@@ -503,6 +517,10 @@
     .row-observaciones .tiempos-entrega{
         width: 161px;
     }
+    .page2-footer{
+        position: absolute;
+        bottom: 20px;
+    }
     .page2-footer-top::after{
         content: '';
         clear: both;
@@ -521,25 +539,28 @@
         width: 100%;
     }
     .footer-top-content{
-        font-size: 10px;
+        font-size: 9px;
         margin-top: 10px;
     }
     .footer-top-content div{
         display: inline-block;
     }
     .footer-top-content .footer-top-icon{
-        width: 15%;
+        width: 12%;
     }
     .footer-top-content .footer-top-text{
         width: 78%;
         margin-left: 10px;
         margin-top: 5px;
     }
+    .top-text_subtitle{
+        color: #4a4a4a;
+    }
     .footer-bottom-content p {
         text-align: center;
         margin: 0 auto;
         font-size: 8px;
-        margin-top: 12px;
+        margin-top: 7px;
         width: 160px;
     }
     /*PAGE 3*/
@@ -685,10 +706,6 @@
     }
 
 </style>
-<?php
-    require_once __DIR__ . "/data.php";
-?>
-
 <body>
     <div class="container">
         <div class="portada page">
@@ -843,178 +860,7 @@
                 </div>
             </div>
         </div>
-        <div class="pagina2 page page-marker">
-            <div class="page2-header">
-                <div class="page2-header__column1">
-                    <div class="page2-header__img-container">
-                        <img src="http://localhost/pdf-plugin/assets/img/kalstein.jpg" alt="logo de kalstein">
-                    </div>
-                    <p>KALSTEIN FRANCE SIREN: 819 970 815</p>
-                </div>
-                <div class="page2-header__column2">
-                    <div class="page2-header__text-container">
-                            <span><b>Cotización N°</b>- QUO135</span>
-                            <span>Paris, 18-07-2022 10:00 AM</span>
-                    </div>
-                </div>
-            </div>
-            <div class="page2-authors">
-                <div class="page2-authors_text">
-                    <span><b>Señores</b></span>
-                    <span>Juan Carlos</span>
-                </div>
-                <div class="page2-authors_text">
-                    <span><b>Atención</b></span>
-                    <span>Juan Carlos</span>
-                </div>
-            </div>
-            
-            <div class="page2-table">
-                <?php
-                    $chunk = array_chunk($data,5);
-                    $page_break = count($data) > 3 ? 'page_break' : '';
-                    $i = 0;
-                    while($i < count($chunk)){ ?>
-                        <table class=<?php echo $page_break;?>>
-                            <thead class="table-header">
-                                <tr>
-                                    <th>Item</th>
-                                    <th>Model</th>
-                                    <th>Imagen</th>
-                                    <th>Descripcion</th>
-                                    <th>Cant</th>
-                                    <th>Unid</th>
-                                    <th>Valor Unitario</th>
-                                    <th>Valor Total</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table-body">
-                                <?php
-                                    $j = 0;
-                                    while($j < count($chunk[$i])){ ?>
-                                        <tr>
-                                            <td class="table-data-item"><?php echo $chunk[$i][$j]["item"]; ?></td>
-                                            <td class="table-data-model"><?php echo $chunk[$i][$j]["model"];?></td>
-                                            <td class="table-data-image">
-                                                <div class="table-img-container">
-                                                    <img src=<?php echo $chunk[$i][$j]["imagen"];?> alt="imagen de producto1">
-                                                </div>
-                                            </td>
-                                            <td class="table-data-description"><?php echo $chunk[$i][$j]["descripcion"];?></td>
-                                            <td class="table-data-cant"><?php echo $chunk[$i][$j]["cantidad"]?></td>
-                                            <td class="table-data-un"><?php echo $chunk[$i][$j]["unidad"]?></td>
-                                            <td class="table-data-valor_un"><?php echo $chunk[$i][$j]["valor_unitario"]?></td>
-                                            <td class="table-data-valor_total">25.692,002$</td>
-                                        </tr>
-                                <?php $j++; } ?>
-                            </tbody>
-                        </table>     
-                    <?php $i++; }?>
-            </div>
-            <div class="datos-logistica">
-                <div class="observaciones">
-                    <div class="row-observaciones">
-                    <span class="tiempos-entrega"><b>Observaciones<br>tiempos de entrega:</b></span>
-                    <span class="tiempos-entrega-value">45 dias aprox</span>
-                    </div>
-                    <div class="row-observaciones">
-                        <span class="tiempos-entrega"><b>Representante de Ventas</b></span>
-                        <div class="value-fields">
-                            <span>YULEANA Mia</span>
-                            <span>Email: mia@kalstein.eu</span>
-                            <span>Tlf: +33 1 78 95 87 89/ +33 6 80 76 07 10</span>
-                        </div>
-                    </div>
-                    <div class="row-observaciones">
-                        <span class="tiempos-entrega"><b>Terminos Comerciales:</b></span>
-                        <div class="value-fields">
-                            <span>Prepago con Orden de Compra.</span>
-                            <span>Descuento Especial (18%), aplicado.</span>
-                        </div>
-                    </div>
-                    <div class="row-observaciones">
-                        <span class="tiempos-entrega"><b>Incoterm:</b></span>
-                        <div class="value-fields">
-                            <span>EXW Kalstein Shanghai</span>
-                        </div>
-                    </div>
-                    <div class="row-observaciones">
-                        <span class="tiempos-entrega"><b>Moneda:</b></span>
-                        <div class="value-fields">
-                            <span>EUR</span>
-                        </div>
-                    </div>
-                    <div class="row-observaciones">
-                        <span class="tiempos-entrega"><b>Garantia:</b></span>
-                        <div class="value-fields">
-                            <span>1 año contra defectos de fabrica</span>
-                        </div>
-                    </div>
-                    <div class="row-observaciones">
-                        <span class="tiempos-entrega"><b>Metodos de Pago:</b></span>
-                        <div class="value-fields">
-                            <ul>
-                                <li>Transferencia Bancaria</li>
-                                <li>Trajeta de Credito/Debito (Pasarela de Pago)</li>
-                                <li>Paypal</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="page-results">
-                    <div class="results-column-title">
-                        <span>Subtotal</span>
-                        <span>IVA</span>
-                        <span>Descuento</span>
-                        <span>Subtotal</span>
-                        <span>Envio</span>
-                        <span>Total</span>
-                    </div>
-                    <div class="results-column-value">
-                        <span>54.872,00</span>
-                        <span>0,00</span>
-                        <span>9.876,96</span>
-                        <span>44.995,04</span>
-                        <span>0,00</span>
-                        <span>44.995,04</span>
-
-                    </div>
-                </div>    
-            </div>
-                <div class="page2-footer ">
-                    <div class="page2-footer-top clearfix">
-                        <div class="footer-top-content clearfix">
-                            <div class="footer-top-icon">
-                                <img src="http://localhost/pdf-plugin/assets/img/img-ce.jpg" alt="icono3">
-                            </div>
-                            <div class="footer-top-text">
-                                <p><b>Marcado CE: para comprar con tranquilidad</b></p>
-                                <p>Todos los equipos de Kalstein cumplen con los requisitos de la UE, de acuerdo con las regulaciones pertinentes</p>
-                            </div>
-                        </div>
-                        <div class="footer-top-content">
-                            <div class="footer-top-icon">
-                                <img src="http://localhost/pdf-plugin/assets/img/icono3.png" alt="icono3">
-                            </div>
-                            <div class="footer-top-text">
-                                <p><b>Con la adquision de un equipo Kalstein</b></p>
-                                <p>usted hace una contribucion a la Fundacion Jacinto Convit, OneTreePlanted, Humatem Foundation y la Fundacion Maniapure.</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="page2-footer-bottom">
-                        <div class="footer-bottom-content">
-                            <p class="bottom-content-p">
-                                KALSTEIN FRANCE S.A.S• 2 Rue Jean Lantier, • 75001 Paris •+33 1 78 95 87 89 / +33 6 80 76 07 10 • https://kalstein.eu
-                            </p>
-                            <span class="bottom-content-span"></span>
-                        </div>
-                    </div>
-                <div class="page2-footer-bottom"></div>
-            </div>
-            <div class="page2-marker">pagina 3 de 5</div>
-        </div>
+        %content%
         <div class="pagina3 page page-marker">
             <div class="marker-container marker-1">
                 <div class="marker"></div>
@@ -1132,7 +978,7 @@
                         <span>A different accompaniment, at your service</span>
                     </div>
                     <div class="text-container">
-                        <h2>Alguna duda?</h2>
+                        <h2>¿Alguna duda?</h2>
                         <span>Contactanos</span>
                         <div class="contact-data-container">
                             <span>PARIS - FRANCE</span>

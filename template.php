@@ -984,8 +984,8 @@
                     </div>
                 </div>    
             </div>
-                <div class="page2-footer ">
-                    <div class="page2-footer-top clearfix">
+            <div class="page2-footer ">
+                <div class="page2-footer-top clearfix">
                         <div class="footer-top-content clearfix">
                             <div class="footer-top-icon">
                                 <img src="http://localhost/pdf-plugin/assets/img/img-ce.jpg" alt="icono3">
@@ -1014,7 +1014,6 @@
                             <span class="bottom-content-span"></span>
                         </div>
                     </div>
-                <div class="page2-footer-bottom"></div>
             </div>
             <div class="page2-marker">pagina 3 de 5</div>
         </div>

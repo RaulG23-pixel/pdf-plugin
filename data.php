@@ -1,4 +1,6 @@
 <?php
+
+//Datos de prueba
 $data = [
     0 => array(
         "item" => 1,
@@ -73,6 +75,60 @@ $data = [
         "valor_unitario" => 25692,00,
     ),
     8 => array(
+        "item" => 4,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    9 => array(
+        "item" => 4,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    10 => array(
+        "item" => 4,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    11 => array(
+        "item" => 4,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    12 => array(
+        "item" => 4,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    13 => array(
+        "item" => 4,
+        "model" => "AB3245P",
+        "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",
+        "descripcion" => "Marca: KalsteinLiofilizador piloto (sin función de sellado)",
+        "cantidad" => 3,
+        "unidad" => "UN",
+        "valor_unitario" => 25692,00,
+    ),
+    14 => array(
         "item" => 4,
         "model" => "AB3245P",
         "imagen" => "http://localhost/pdf-plugin/assets/img/img-producto1.jpg",

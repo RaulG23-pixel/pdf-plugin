@@ -27,15 +27,21 @@ require __DIR__ . "/helpers/create_filenames.php";
 <body>
     <h1>Descargar archivo</h1>
     <?php
-    if(isset($_GET["file"])){
-        $filename = $_GET["file"];
-        $path = "uploads". "/" . $filename; ?>
+
+    /*  si se le proporciona a la pagina la variable file a través de la url se despliega la seccion de
+        visualización y descarga de lo contrario se desplegará el boton de "crear archivo"
+    */  
+
+        if(isset($_GET["file"])){
+            $filename = $_GET["file"];
+            $path = "uploads". "/" . $filename;
+    ?>
         <a href=<?php echo $path;?> target="_blank">Ver archivo</a>
         <a href=<?php echo $path;?> download>Descargar archivo</a>
-    <?php
-    }else{ 
-        echo '<a href="createPdf.php">Crear archivo</a>';
-    } 
+    <?php }
+        else{ 
+            echo '<a href="createPdf.php">Crear archivo</a>';
+        } 
     ?>
     
 </body>

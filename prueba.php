@@ -13,8 +13,8 @@
 <body>
     <h1>Pruebas de datos dinamicos en tablas</h1>
     <?php
-        $tables = generateTable($data);
-        echo $tables;
+        $html = generateHtml($data,"template_uso.php");
+        echo $html;
     ?>
 </body>
 </html>
