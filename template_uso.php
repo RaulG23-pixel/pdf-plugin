@@ -346,7 +346,8 @@
         display: inline-block;
     }
     .page2-header__img-container {
-        width: 210px
+        width: 210px;
+        padding-right: 25px;
     }
     .page2-header__img-container img{
         width: 100%;
@@ -356,7 +357,7 @@
         text-align: right;
     }
     .page2-header__column1 p{
-        font-size: 10.3px;
+        font-size: 9.3px;
     }
     .page2-header__column2{
         width: 50%;
