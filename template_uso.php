@@ -259,6 +259,7 @@
     }
     .page1-header-text span{
         font-size: 12px;
+        color: rgb(54,54,54);
     }
     .icon_container{
         width: 34px;
@@ -289,15 +290,15 @@
         width: 70%;
     }
     .item-description h4{
-        font-size: .74rem;
+        font-size: .82rem;
         color:rgb(1, 42, 105);
         margin-bottom: 5px;
         font-weight: bold;
     }
     .item-description p{
-        font-size: .7034rem;
-        line-height: 14px;
-        color: rgb(0, 0, 0);
+        font-size: .62rem;
+        line-height: 15px;
+        color: rgb(88,88,88);
         font-weight:400;
         width:89%;
     }
@@ -357,7 +358,7 @@
         text-align: right;
     }
     .page2-header__column1 p{
-        font-size: 9.3px;
+        font-size: 8.7px;
     }
     .page2-header__column2{
         width: 50%;
