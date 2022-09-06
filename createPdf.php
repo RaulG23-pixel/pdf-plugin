@@ -9,7 +9,7 @@ use Dompdf\Options;
 
 //Lectura del archivo
 
-$file = fopen("template_uso.php",'r');
+$file = fopen("template.php",'r');
 $text = fread($file,filesize("template.php"));
 fclose($file);
 
@@ -25,7 +25,7 @@ $dompdf->loadHtml($text);
 $dompdf->render();
 
 // Output the generated PDF to Browser
-//$dompdf->stream("document.pdf");
+
 $filename = createFilenames(".pdf");
 $path = __DIR__ . "/uploads/$filename";
 $output = $dompdf->output();
