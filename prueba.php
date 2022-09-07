@@ -1,6 +1,11 @@
 <?php
     require_once __DIR__ . "/helpers/generate_html.php";
     require_once __DIR__ . "/data.php";
+    require_once __DIR__ . "/database.php";
+
+    $productos = new Model("productos");
+    $lista = $productos->getAll();
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,9 +17,7 @@
 </head>
 <body>
     <h1>Pruebas de datos dinamicos en tablas</h1>
-    <?php
-        $html = generateHtml($data,"template_uso.php");
-        echo $html;
-    ?>
+    <p>Hola mundo</p>
+    <?php echo number_format($suma_total,2,',','.'); ?>
 </body>
 </html>

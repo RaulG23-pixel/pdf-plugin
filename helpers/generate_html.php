@@ -1,5 +1,6 @@
 <?php
-    require __DIR__ . "/get_modifiable_parts.php";
+    require __DIR__. "/get_modifiable_parts.php";
+    require __DIR__. "/calculous_functions.php";
 
 /*
     Genera una tabla a partir de los datos suministrados en el parametro $data, dicho parametro o conjunto de datos, se divide
@@ -45,11 +46,11 @@ function generateTable($data, $activateClass = false){
     
 }
 function generatePage($data){
+    $suma_total = generateTotal($data);
     $chunk = array_chunk($data,5);
     $i = 0;
     $header = getPageheader();
     $authors = getPageAuthors();
-    $logistica = getLogisticData();
     $footer = getPageFooter();
     $pages = '';
     while($i < count($chunk)){
@@ -65,6 +66,7 @@ function generatePage($data){
         $pages .= $table;
 
         if(count($chunk) - 1 === $i){
+            $logistica = getLogisticData($suma_total);
             $pages .= $logistica;
         }
 
@@ -75,7 +77,6 @@ function generatePage($data){
     
     return $pages;
 }
-
 
 /*
     Genera filas de datos a partir del paramentro $data, se inicializan la variable en $j y la variable $tbody, utilizando un bucle while
@@ -90,7 +91,11 @@ function generateRows($data, $useClassName = false){
     $j = 0;
     $tbody = "<tbody class='table-body'>";
     $classname = $useClassName ? 'end' : '';
+
     while($j <  count($data)){
+        $v_unitario_int = (int) $data[$j]["valor_unitario"];
+        $valor_unitario = number_format($v_unitario_int,2,',','.');
+        $valor_total = $valor_unitario * (int) $data[$j]['cantidad'];
         $tbody .= "
                 <tr>
                     <td class='table-data-item'>". $data[$j]['item'] . "</td>
@@ -103,16 +108,16 @@ function generateRows($data, $useClassName = false){
                     <td class='table-data-description'>" . $data[$j]['descripcion'] . "</td>
                     <td class='table-data-cant'>" . $data[$j]['cantidad'] . "</td>
                     <td class='table-data-un'>" . $data[$j]['unidad'] . "</td>
-                    <td class='table-data-valor_un'>" . $data[$j]['valor_unitario'] . "</td>
-                    <td class='table-data-valor_total'>25.692,002$</td>
+                    <td class='table-data-valor_un'>" . $valor_unitario . "$</td>
+                    <td class='table-data-valor_total'>" . $valor_total ."$</td>
                 </tr>";
         $j++;
     }
 
     $tbody .= "</tbody>";
     return $tbody;
-
 }
+
 function generateHtml($data,$filename){
     $file = fopen($filename, 'r');
     $html = fread($file,filesize($filename));

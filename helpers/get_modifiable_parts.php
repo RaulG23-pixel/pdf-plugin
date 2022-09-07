@@ -33,7 +33,7 @@ function getPageAuthors(){
     return $authors;
 }
 //Datos de logistica
-function getLogisticData(){
+function getLogisticData($suma_total = 0){
     $logistica = '
     <div class="datos-logistica">
         <div class="observaciones">
@@ -95,7 +95,7 @@ function getLogisticData(){
                 <span>Total</span>
             </div>
             <div class="results-column-value">
-                <span>54.872,00$</span>
+                <span>' . number_format($suma_total,2,',','.') .'$</span>
                 <span>0,00$</span>
                 <span>9.876,96$</span>
                 <span>44.995,04$</span>

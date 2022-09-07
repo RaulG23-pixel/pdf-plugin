@@ -478,7 +478,7 @@
     }
     .datos-logistica .page-results{
         width: 20%;
-        margin-left: 120px;
+        margin-left: 100px;
         position:absolute;
     }
     .page-results > div {
